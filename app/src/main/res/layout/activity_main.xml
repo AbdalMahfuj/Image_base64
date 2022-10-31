@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- add Camera Button to open the Camera -->
+    <Button
+        android:id="@+id/camera_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Camera" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <!-- add ImageView to display the captured image -->
+        <ImageView
+            android:id="@+id/click_image"
+            android:layout_width="180dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"/>
+<!--            app:srcCompat="@drawable/image"-->
+        <ImageView
+            android:id="@+id/click_image_conv"
+            android:layout_width="180dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"/> />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert To String"
+            android:id="@+id/btn1"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert To Image"
+            android:id="@+id/btn2"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/strID"
+        android:text="Converted String will appear here"
+        android:gravity="center"/>
+
+</LinearLayout>
+</ScrollView>
