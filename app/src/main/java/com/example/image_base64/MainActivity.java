@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int Camera_perm_code = 123;
     public static final int Camera_req_code = 102;
     // Define the button and imageview type variable
-    Button camera_open_id, btn_convertToStr, btn_convertToImg;
+    Button camera_open_id, btn_convertToStr, btn_convertToImg, btn_copy;
     TextView strView;
     ImageView click_image_id, conv_image_id;
     Bitmap image;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         strView = findViewById(R.id.strID);
         btn_convertToStr = findViewById(R.id.btn1);
         btn_convertToImg = findViewById(R.id.btn2);
+        btn_copy = findViewById(R.id.btn3);
 
         camera_open_id.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +87,15 @@ public class MainActivity extends AppCompatActivity {
                 conv_image_id.setImageBitmap(decodedImage);
             }
         });
+
+
+        btn_copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                clipboard.setText(imageString);
+            }
+        });
     }
 
     public void askCameraPermission() {
@@ -110,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openCamera() {
             Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(camera,Camera_req_code);
+            startActivityForResult(camera, Camera_req_code);
     }
 
     // This method retrieves the image

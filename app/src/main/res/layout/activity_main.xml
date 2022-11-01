@@ -47,22 +47,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Convert To String"
+            android:layout_weight="1"
+            android:layout_width="10dp"
+            android:layout_height="40dp"
+            android:text="String"
             android:id="@+id/btn1"
             android:layout_gravity="center"
             android:layout_margin="30dp"/>
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Convert To Image"
+            android:layout_weight="1"
+            android:layout_width="25dp"
+            android:layout_height="40dp"
+            android:text="Image"
             android:id="@+id/btn2"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:text="Copy"
+            android:id="@+id/btn3"
+            android:layout_margin="30dp"/>
     </LinearLayout>
 
     <TextView
@@ -70,7 +80,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/strID"
         android:text="Converted String will appear here"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textIsSelectable="true"/>
 
 </LinearLayout>
 </ScrollView>
